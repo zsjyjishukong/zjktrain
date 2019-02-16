@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="GBK">
+    <title>主页</title>
+    <script src="js/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            margin: 0;
+            overflow-x: hidden;
+        }
+        #page{
+            background: #f5f5f5;
+            padding-bottom: 20px;
+        }
+        #page >*{
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        header{
+            background: linear-gradient(to bottom, #8bc3ff, #ade5ff);
+            padding: 5px;
+            color: #000;
+        }
+        nav{
+            overflow: hidden;
+            background: #2c66b0;
+            height: 3rem;
+            line-height: 3rem;
+            color: #fff;
+        }
+        .nav-hover{
+            float: left;
+            width: 14.28%;
+            text-align: center;
+        }
+        .nav-hover:hover{
+            background: #ee5420;
+            cursor: pointer;
+        }
+        .hover:hover{
+            text-shadow: white 1px 1px;
+            cursor: pointer;
+        }
+        .list-hover:hover{
+            color: #E6A23C;
+            cursor: pointer;
+            user-select: none;
+        }
+        #swiper{
+            overflow: hidden;
+            text-align: left;
+        }
+        #swiper>div{
+            width: 600px;
+            height: 450px;
+        }
+        #swiper>div>img{
+            position: absolute;
+            height: 450px;
+            width: 600px;
+            opacity: 0;
+            transition: all 1s linear;
+        }
+        #swiper .show{
+            opacity: 1;
+            z-index: 10;
+        }
+        #headimg{
+            height: 420px;
+            width: 89.8%;
+            padding: 0;
+            margin: 20px auto;
+        }
+        .content1{
+            width: 91%;
+            margin: auto;
+            overflow: hidden;
+            text-align: center;
+            padding: 0;
+        }
+        .content1>div{
+            float: left;
+            margin: 10px 1%;
+            background: #fff;
+            padding: 1%;
+        }
+        #content{
+            background: #fff;
+            overflow: hidden;
+            width: 80%;
+            margin: 20px auto 0 auto;
+        }
+        .show-div{
+            width: 30%;
+            float: left;
+            padding: 1%;
+            font-size: 20px;
+            /*border: 0.5px solid #222;*/
+            margin-right: 1%;
+            min-height: 200px;
+        }
+        .show-body{
+            font-size: 14px;
+        }
+        .show-body li{
+            margin: 10px 0 0 0;
+        }
+        .show-title{
+            border-bottom: 1px solid #409EFF;
+            float: left;
+            line-height: 40px;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .icon{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+        .discribe{
+            float: left;
+            line-height: 40px;
+            margin-left: 10px;
+        }
+        #lingdaojianghuadiv{
+            margin-left: 0.9%;
+        }
+        #lingdaojianghua{
+            color: #d8b702;
+        }
+        #shangjiwenjian{
+            color: #24909a;
+        }
+        #duanfawenjian{
+            color: #44a2e2;
+        }
+        #footimg{
+            height: 360px;
+            margin-top: 20px;
+            width: 87%;
+            background: #fff;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        footer{
+            background: #2d68ac;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 13px;
+            line-height: 30px;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <img src="img/校徽透明版.png" height="50px">
+            <div style="float: right;margin-top: 15px;">
+                <span class="hover" id="username" onclick="location.href = OA_LOGIN_URL">登录</span> | 今天是：<span id="time"></span>
+            </div>
+        </header>
+        <nav>
+            <div class="nav-hover">nav1</div>
+            <div class="nav-hover">nav2</div>
+            <div class="nav-hover">nav3</div>
+            <div class="nav-hover">nav4</div>
+            <div class="nav-hover">nav5</div>
+            <div class="nav-hover">nav6</div>
+            <div class="nav-hover">nav7</div>
+        </nav>
+        <div id="headimg">
+            <img src="img/swiper1.jpg"  height="420px" width="100%">
+        </div>
+        <div class='content1'>
+            <div id="swiper" style="width: 600px; height: 450px; padding: 0">
+                <div style="position: relative; height: 450px;" id="middle-img">
+                    <!--imgs-->
+                    <div style="background: rgba(0,0,0,0.3); z-index: 11; position: absolute; width: 600px;
+                                height: 30px; line-height: 30px; bottom: 0; color: #f5f5f5; padding:10px;"
+                        id="swiperDiscripe">
+                        添加描述
+                    </div>
+                </div>
+            </div>
+            <div id="safe" style="width: 700px; margin-right: 0; font-size: 30px; line-height: 50px; background: red; color: yellow;">
+                <div>
+                    安全日历
+                </div>
+                <div>
+                    本段安全天数： <span id="safe-local">N/A</span>天
+                </div>
+                <div>
+                    路局安全天数： <span id="safe-origin">N/A</span>天
+                </div>
+            </div>
+            <div id="urls" style="width: 700px; margin-right: 0; font-size: 20px; height: 225px;">
+                <div style="margin-bottom: 20px; border-bottom: 1px solid #2d68ac; color: #2d68ac;padding-bottom: 10px;">
+                    友情链接
+                </div>
+                <div style="text-align: left;" id="links">
+
+                </div>
+            </div>
+        </div>
+        <div class='content1'>
+            <div style="width: 48%; padding: 0;height: 341.2px;">
+                <div style="border-bottom: 1px solid #426db8; padding: 2.5%; color: #426db8; font-family:'黑体';
+                font-weight:bold; font-size: 20px;">
+                    <span class="column-title">栏目一</span>
+                </div>
+                <div style="padding: 2.5%; text-align: left; line-height: 30px;" class="column">
+
+                </div>
+            </div>
+            <div style="width:48%; padding: 0; height: 341.2px;">
+                <div style=" border-bottom: 1px solid #2d68ac; background: #2d68ac; padding: 3%; font-size: 20px; color: white; line-height: 20px;">
+                    <img src="img/notify.png" height="20px" style="margin-right: 10px;"><span class="column-title">栏目二</span>
+                </div>
+                <div style="padding: 20px 5%; text-align: left; line-height: 30px; overflow: hidden; height: 220px;"
+                    class="column">
+
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div>
+                
+            </div>
+            <div id="news">
+                <div class="show-div" id="lingdaojianghuadiv">
+                    <div class="show-title" id="lingdaojianghua">
+                        <div class="icon">
+                            <img src="img/lingdaojianghua.png" height="40px">
+                        </div>
+                        <div class="discribe">
+                            <span class="column-title">栏目三</span>
+                        </div>
+                    </div>
+                    <div class="show-body column">
+
+                    </div>
+                </div>
+                <div class="show-div">
+                    <div class="show-title" id="shangjiwenjian">
+                        <div class="icon">
+                            <img src="img/shangjiwenjian.png" height="40px">
+                        </div>
+                        <div class="discribe"><span class="column-title">栏目四</span></div>
+                    </div>
+                    <div class="show-body column">
+
+                    </div>
+                </div>
+                <div class="show-div" style="margin-right: 0">
+                    <div class="show-title" id="duanfawenjian">
+                        <div class="icon">
+                            <img src="img/duanfawenjian.png" height="40px">
+                        </div>
+                        <div class="discribe">
+                            <span class="column-title">栏目五</span>
+                        </div>
+                    </div>
+                    <div class="show-body column">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footimg">
+            <div style="text-align: center; padding: 20px 0 0 0; color: #2d68ac; font-size: 20px;">
+                ----<span class="column-title">栏目六</span>----
+            </div>
+           <section class="pc-banner">
+           	<div class="swiper-container">
+           		<div class="swiper-wrapper column">
+
+           		</div>
+           		<div class="button">
+           			<div class="swiper-button-prev"></div>
+           			<div class="swiper-button-next"></div>
+           		</div>
+           	</div>
+           </section>
+           <script type="text/javascript" src="js/swiper.min.js"></script>
+            <script>
+                    $.ajax({
+                        url: 'php/index_init.php',
+                        methods: 'get',
+                        success: function (res) {
+                            res = JSON.parse(res);
+                            if (res.code === 0) {
+                                // 改变nav
+                                let navs = document.getElementsByClassName('nav-hover')
+                                for (let i = 0; i<navs.length; i++) {
+                                    navs[i].innerHTML = res.data['navs'][i].description
+                                    navs[i].addEventListener('click', function () {
+                                        window.open(res.data['navs'][i].src)
+                                    })
+                                }
+
+                                // 读取中间轮播图片
+                                let middle = $("#middle-img")
+                                for (let i =0; i<res.data.middleImg.length; i++) {
+                                    let $newMiddle = $(`<img src="${res.data.middleImg[i].src}" data-description="${res.data.middleImg[i].description}">`)
+                                    if (i===0) {
+                                        $newMiddle.addClass('show')
+                                    }
+                                    middle.prepend($newMiddle)
+                                }
+                                $("#swiperDiscripe").html($('#swiper .show').data('description'))
+
+                                // 操作safe
+                                let safeLocal = res.data.safe[0].dates
+                                let safeOrigin = res.data.safe[1].dates
+                                safeLocal = new Date(safeLocal)
+                                safeOrigin = new Date(safeOrigin)
+                                $("#safe-local").html(countDaysBetween(safeLocal, new Date()))
+                                $("#safe-origin").html(countDaysBetween(safeOrigin, new Date()))
+
+                                // 操作友情链接
+                                for (let i=0; i<res.data.link.length; i++) {
+                                    $("#links").append($(`<span class="list-hover" onclick="window.open('${res.data.link[i].src}');" style="margin: 2px 5px">${res.data.link[i].description}</span> `))
+                                }
+                                // 栏目标题
+                                let columnTitle = $(".column-title")
+                                for (let i = 0; i<res.data.columnTitle.length; i++) {
+                                    columnTitle.eq(i).html(res.data.columnTitle[i].description)
+                                }
+                                // 总栏目都放到class里
+                                let column = $(".column")
+
+                                // 栏目1内容
+                                let column1 = column.eq(0)
+                                for (let i = 0; i<res.data.column1.length; i++) {
+                                    if (i<9)
+                                        column1.append($(`<li class="list-hover">${res.data.column1[i].title}(${res.data.column1[i].date})</li>`))
+                                }
+
+                                //栏目二内容
+                                let column2 = column.eq(1)
+                                for (let i = 0; i<res.data.column2.length; i++) {
+                                    if (i<9)
+                                        column2.append($(`<li class="list-hover">${res.data.column2[i].title}(${res.data.column2[i].date})</li>`))
+                                }
+
+                                //栏目三内容
+                                let column3 = column.eq(2)
+                                for (let i = 0; i<res.data.column3.length; i++) {
+                                    if (i<9)
+                                        column3.append($(`<li class="list-hover">${res.data.column3[i].title}(${res.data.column3[i].date})</li>`))
+                                }
+
+                                //栏目四内容
+                                let column4 = column.eq(3)
+                                for (let i = 0; i<res.data.column4.length; i++) {
+                                    if (i<9)
+                                        column4.append($(`<li class="list-hover">${res.data.column4[i].title}(${res.data.column4[i].date})</li>`))
+                                }
+
+                                //栏目五内容
+                                let column5 = column.eq(4)
+                                for (let i = 0; i<res.data.column5.length; i++) {
+                                    if (i<9)
+                                        column5.append($(`<li class="list-hover">${res.data.column5[i].title}(${res.data.column5[i].date})</li>`))
+                                }
+
+                                //栏目六内容
+                                let column6 = column.eq(5)
+                                for (let i = 0; i<res.data.column6.length; i++) {
+                                    let newHtml = $(`<div class="swiper-slide">
+           				                                <a href="#">
+           					                                <img src="${res.data.column6[i].img_src}">
+           				                                </a>
+           				                                <div class="layer-mask"></div>
+           			                                   </div>`)
+                                    column6.append(newHtml)
+                                }
+                                var swiper = new Swiper('.swiper-container',{
+                                    autoplay: 5000,
+                                    speed: 1000,
+                                    autoplayDisableOnInteraction: false,
+                                    loop: true,
+                                    centeredSlides: true,
+                                    slidesPerView: 2,
+                                    pagination: '.swiper-pagination',
+                                    paginationClickable: true,
+                                    prevButton: '.swiper-button-prev',
+                                    nextButton: '.swiper-button-next',
+                                    onInit: function(swiper) {
+                                        swiper.slides[2].className = "swiper-slide swiper-slide-active";
+                                    },
+                                    breakpoints: {
+                                        668: {
+                                            slidesPerView: 1,
+                                        }
+                                    }
+                                });
+                            }
+                        },
+                        error: function (err) {
+                            console.log('出错了'+err)
+                        }
+                    })
+            </script>
+        </div>
+    </div>
+    <footer>
+        <span class="hover" onclick="setHome(this, window.location.href)">设为首页</span> | 加入收藏 | 版权所有 | 联系我们 <br>
+        版权所有：张家口市机务段
+    </footer>
+</body>
+<script>
+    let now = getNow();
+    const OA_HOST = 'http://localhost:8889/'
+    const OA_INDEX_URL = OA_HOST + 'general/index.php';
+    const OA_LOGIN_URL = OA_HOST;
+    //显示时间
+    printNow(now);
+    //启动定时器
+    swiper();
+    isLogin();
+    document.getElementById("news").addEventListener("click", function(e){
+        if(e.target.nodeName === "LI") {
+            if(isLogin()) {
+                window.open(OA_INDEX_URL, "_self");
+            }else {
+                window.open(OA_HOST, "_self");
+            }
+        };
+    });
+
+    document.getElementsByClassName("swiper-container")[0].addEventListener("click", function(e){
+        e.preventDefault();
+        if(e.target.nodeName === "IMG") {
+            if(isLogin()) {
+                window.open(OA_INDEX_URL, "_self");
+            }else {
+                window.open(OA_HOST, "_self");
+            }
+        };
+    });
+
+    /**
+     * 计算两个日期的相差天数
+     * @param start date格式
+     * @param end date格式
+     * @returns {number}
+     */
+    function countDaysBetween(start, end) {
+        let date=(end.getTime()-start.getTime())/(1000*60*60*24);/*不用考虑闰年否*/
+        return parseInt(date);
+    }
+
+    /**
+     * 判断是否登录OA
+     */
+    function isLogin() {
+        console.log(document.cookie);
+        let cookie = document.cookie;
+        let cookieObj = cookieStrToObj(cookie);
+        console.log(cookieObj['OA_USER_ID'])
+        if (cookieObj.OA_USER_ID !== undefined && cookieObj.KEY_RANDOMDATA === undefined) {
+            $('#username').text(`欢迎 ${cookieObj.OA_USER_ID}`).click(function () {
+                location.href = OA_INDEX_URL;
+            })
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * cookie从文字转为对象
+     */
+    function cookieStrToObj(str) {
+        let obj = {};
+        let arr = str.split(';');
+        for (let i of arr) {
+            let arr1 = i.split('=');
+            obj[arr1[0].trim()] = arr1[1].trim();
+        }
+        return obj;
+    }
+
+    /**
+     * 获得现在的时间
+     * @returns {{nowYear: number, nowMonth: number, nowDate: number, nowDay: number}}
+     */
+    function getNow() {
+        let now = new Date();
+        let nowYear = now.getFullYear();
+        let nowMonth = now.getMonth();
+        let nowDate = now.getDate();
+        let nowDay = now.getDay();
+        return {
+            nowYear,nowMonth,nowDate,nowDay
+        }
+    }
+
+    /**
+     * 数字转文字(星期）
+     */
+    function numToChar(num) {
+        switch (num){
+            case 0:
+                return '日'
+            case 1:
+                return '一'
+            case 2:
+                return '二'
+            case 3:
+                return '三'
+            case 4:
+                return '四'
+            case 5:
+                return '五'
+            case 6:
+                return '六'
+            case 7:
+                return '日'
+        }
+
+    }
+    /**
+     * 右上角时间显示
+     * @param now 一个包括年月日星期的对象
+     */
+    function printNow(now) {
+        $('#time').text(
+            `${now.nowYear}年${now.nowMonth+1}月${now.nowDate}日 星期${numToChar(now.nowDay)}`
+        );
+    }
+
+    /**
+     * 轮播图，不可调整样式，可调整个数，需要在源码调整
+     */
+    function swiper() {
+        let all = $('#swiper>div')
+        setInterval(()=> {
+            if ($('#swiper .show').index() !== all.children().length-2)
+                $('.show').removeClass('show').next().addClass('show')
+            else {
+                $('#swiper .show').removeClass('show');
+                $('#swiper>div>img').first().addClass('show');
+            }
+            $("#swiperDiscripe").html($('#swiper .show').data('description'))
+        }, 5000)
+    }
+
+    /**
+     * 设为首页
+     * @param obj 在按钮上添加this
+     * @param vrl url
+     */
+    function setHome(obj,vrl){
+        console.log('a')
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+
+</script>
+</html>
