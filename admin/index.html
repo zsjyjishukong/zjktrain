@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <style>
+        .left-border{
+            /*border-bottom: 1px solid #aeaeae;*/
+            padding: 0 5px;
+        }
+        #accordion>div{
+            overflow: hidden;
+        }
+        .nav-manage{
+            text-align: center;
+        }
+        #nav-manage-table{
+            margin: auto;
+        }
+        #nav-manage-table tr{
+            height: 30px;
+        }
+        #nav-manage-table input{
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            outline-color: orange;
+            -moz-outline-radius: 5px;
+            padding: 2px 5px;
+        }
+        .head-img-manage{
+            text-align: center;
+        }
+        .middle-img{
+            text-align: center;
+        }
+        .middle-img>table{
+            margin: auto;
+        }
+        .middle-img td{
+            padding: 5px 20px;
+        }
+        .safe-manage{
+            text-align: center;
+        }
+        .safe-manage>table{
+            margin: auto;
+        }
+        .safe-manage td{
+            padding: 5px 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="accordion">
+    <h3>导航管理</h3>
+    <div class="nav-manage">
+        <table style="text-align: center" id="nav-manage-table">
+            <tr>
+                <td>显示顺序</td>
+                <td class="left-border">显示文字</td>
+                <td class="left-border">跳转链接</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="left-border"><input type="text" class="nav" name="nav1_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav1_src" ></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td class="left-border"><input type="text" class="nav" name="nav2_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav2_src"></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td class="left-border"><input type="text" class="nav" name="nav3_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav3_src"></td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td class="left-border"><input type="text" class="nav" name="nav4_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav4_src"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="left-border"><input type="text" class="nav" name="nav5_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav5_src"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td class="left-border"><input type="text" class="nav" name="nav6_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav6_src"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td class="left-border"><input type="text" class="nav" name="nav7_description"></td>
+                <td class="left-border"><input type="text" class="nav" name="nav7_src"></td>
+            </tr>
+        </table><br>
+        <button>确认更改</button>
+    </div>
+    <h3>头图管理</h3>
+    <div class="head-img-manage">
+        <img src="../img/head.jpg" width="960px"><br><br>
+        <span style="color: #aeaeae;">* 推荐1920*570像素的图片</span><br><br>
+        <button>确认更换</button>
+    </div>
+    <h3>中轮播管理</h3>
+    <div class="middle-img">
+        <table>
+            <tr>
+                <td>序号</td>
+                <td>图片</td>
+                <td>操作</td>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br>
+        <span style="color: #aeaeae;">* 推荐603*450像素的图片</span><br><br>
+        <button>确认更换</button>
+    </div>
+    <h3>安全日历管理</h3>
+    <div class="safe-manage">
+        <table>
+            <tr>
+                <td>序号</td>
+                <td>描述</td>
+                <td>日期</td>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>本段</td>
+                    <td><input id="local" class="date"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>路局</td>
+                    <td><input id="origin" class="date"></td>
+                </tr>
+            </tbody>
+        </table><br>
+        <button>确认更改</button>
+    </div>
+    <h3>友情链接管理</h3>
+    <div class="links-manage">
+
+    </div>
+    <h3>栏目标题管理</h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目1内容管理<span class="column-title"></span></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目2内容管理<span class="column-title"></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目3内容管理<span class="column-title"></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目4内容管理<span class="column-title"></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目5内容管理<span class="column-title"></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>栏目6内容管理<span class="column-title"></h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <h3>管理员管理</h3>
+    <div>Nam dui erat, auctor a, dignissim quis.</div>
+</div>
+</body>
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+    $.ajax({
+        url: '../php/index_init.php',
+        methods: 'get',
+        success: function (res) {
+            res = JSON.parse(res)
+            if (res.code === 0) {
+                let data = res.data
+                // 改变nav
+                let navs = $(".nav-manage input")
+                console.log(navs)
+                for (let i = 0; i<navs.size()/2; i++) {
+                    navs.eq(2*i).val(data.navs[i].description)
+                    navs.eq(2*i+1).val(data.navs[i].src)
+                }
+
+                // 读取中间轮播图片
+                let middle = $(".middle-img tbody").eq(0)
+                for (let i =0; i<data.middleImg.length; i++) {
+                    let $newMiddle = $(`<tr>
+                                             <td>${i+1}</td>
+                                             <td><img src="../${data.middleImg[i].src}" height='100px'></td>
+                                             <td><button>删除</button></td>
+                                         </tr>`)
+                    middle.append($newMiddle)
+                }
+
+                // 操作safe
+                let safeLocal = data.safe[0].dates
+                $('#local').val(safeLocal)
+                let safeOrigin = data.safe[1].dates
+                $('#origin').val(safeOrigin)
+
+                // 显示标题
+                for (let i = 0; i < data.columnTitle.length; i++) {
+                    $(".column-title").eq(i).html("----" + data.columnTitle[i].description)
+                }
+
+                // $("#safe-local").html(countDaysBetween(safeLocal, new Date()))
+                // $("#safe-origin").html(countDaysBetween(safeOrigin, new Date()))
+                //
+                // // 操作友情链接
+                // for (let i=0; i<res.data.link.length; i++) {
+                //     $("#links").append($(`<span class="list-hover" onclick="window.open('${res.data.link[i].src}');" style="margin: 2px 5px">${res.data.link[i].description}</span> `))
+                // }
+                // // 栏目标题
+                // let columnTitle = $(".column-title")
+                // for (let i = 0; i<res.data.columnTitle.length; i++) {
+                //     columnTitle.eq(i).html(res.data.columnTitle[i].description)
+                // }
+                // // 总栏目都放到class里
+                // let column = $(".column")
+                //
+                // // 栏目1内容
+                // columnSet(column,0,res.data.column1,9,35)
+                //
+                // //栏目二内容
+                // columnSet(column,1,res.data.column2,9,35)
+                //
+                // //栏目三内容
+                // columnSet(column,2,res.data.column3,9,18)
+                //
+                // //栏目四内容
+                // columnSet(column,3,res.data.column4,9,18)
+                //
+                // //栏目五内容
+                // columnSet(column,4,res.data.column5,9,18)
+                //
+                // //栏目六内容
+                // let column6 = column.eq(5)
+                // for (let i = 0; i<res.data.column6.length; i++) {
+                //     let newHtml = $(`<div class="swiper-slide">
+           		// 		                                <a href="#">
+           		// 			                                <img src="${res.data.column6[i].img_src}">
+           		// 		                                </a>
+           		// 		                                <div class="layer-mask"></div>
+           		// 	                                   </div>`)
+                //     column6.append(newHtml)
+                // }
+            }
+            $("button").button()
+        },
+        error: function (err) {
+            console.log('出错了'+err)
+        }
+    })
+    $(".date").datepicker({
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "yy-mm-dd"
+    })
+    $( "#accordion" ).accordion({
+        heightStyle: "content"
+    });
+    $("#nav-manage-table tr:lt(1) td:lt(1)").css("padding", "5px")
+    $("button").button()
+</script>
+</html>

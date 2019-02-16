@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27abecd2-2fa4-4150-aa51-1e50d1ee3549" name="Default" comment="" />
+    <list default="true" id="27abecd2-2fa4-4150-aa51-1e50d1ee3549" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/swiper1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+            <state relative-caret-position="200">
+              <caret line="173" column="26" lean-forward="true" selection-start-line="173" selection-start-column="26" selection-end-line="173" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -52,11 +58,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="50" column="119" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="119" />
+            <state relative-caret-position="285">
+              <caret line="207" column="16" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,6 +113,9 @@
       <find>黑体</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -106,10 +124,10 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/php/index.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/admin/index.html" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/php/index_init.php" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/admin/index.html" />
       </list>
     </option>
   </component>
@@ -124,11 +142,12 @@
       <path value="$PROJECT_DIR$/admin/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -145,6 +164,11 @@
               <item name="cheng" type="b2602c69:ProjectViewProjectNode" />
               <item name="cheng" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cheng" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cheng" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cheng" type="b2602c69:ProjectViewProjectNode" />
@@ -218,12 +242,12 @@
       <workItem from="1550112372967" duration="10938000" />
       <workItem from="1550133311015" duration="8361000" />
       <workItem from="1550195309867" duration="16416000" />
-      <workItem from="1550282965876" duration="1374000" />
+      <workItem from="1550282965876" duration="8685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102627000" />
+    <option name="totallyTimeSpent" value="109938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -235,7 +259,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32965517" />
@@ -269,7 +293,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
+    <entry file="file://$PROJECT_DIR$/admin/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1250">
           <caret line="50" column="119" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="119" />
@@ -315,7 +339,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
+    <entry file="file://$PROJECT_DIR$/admin/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
@@ -612,13 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="50" column="119" selection-start-line="50" selection-start-column="119" selection-end-line="50" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/index_init.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -628,8 +645,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+        <state relative-caret-position="200">
+          <caret line="173" column="26" lean-forward="true" selection-start-line="173" selection-start-column="26" selection-end-line="173" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -639,6 +656,22 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="207" column="16" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="16" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
         </state>

@@ -97,7 +97,6 @@
             float: left;
             padding: 1%;
             font-size: 20px;
-            /*border: 0.5px solid #222;*/
             margin-right: 1%;
             min-height: 200px;
         }
@@ -173,7 +172,7 @@
             <div class="nav-hover">nav7</div>
         </nav>
         <div id="headimg">
-            <img src="img/swiper1.jpg"  height="420px" width="100%">
+            <img src="img/head.jpg"  height="420px" width="100%">
         </div>
         <div class='content1'>
             <div id="swiper" style="width: 600px; height: 450px; padding: 0">
@@ -334,39 +333,19 @@
                                 let column = $(".column")
 
                                 // 栏目1内容
-                                let column1 = column.eq(0)
-                                for (let i = 0; i<res.data.column1.length; i++) {
-                                    if (i<9)
-                                        column1.append($(`<li class="list-hover">${res.data.column1[i].title}(${res.data.column1[i].date})</li>`))
-                                }
+                                columnSet(column,0,res.data.column1,9,35)
 
                                 //栏目二内容
-                                let column2 = column.eq(1)
-                                for (let i = 0; i<res.data.column2.length; i++) {
-                                    if (i<9)
-                                        column2.append($(`<li class="list-hover">${res.data.column2[i].title}(${res.data.column2[i].date})</li>`))
-                                }
+                                columnSet(column,1,res.data.column2,9,35)
 
                                 //栏目三内容
-                                let column3 = column.eq(2)
-                                for (let i = 0; i<res.data.column3.length; i++) {
-                                    if (i<9)
-                                        column3.append($(`<li class="list-hover">${res.data.column3[i].title}(${res.data.column3[i].date})</li>`))
-                                }
+                                columnSet(column,2,res.data.column3,9,18)
 
                                 //栏目四内容
-                                let column4 = column.eq(3)
-                                for (let i = 0; i<res.data.column4.length; i++) {
-                                    if (i<9)
-                                        column4.append($(`<li class="list-hover">${res.data.column4[i].title}(${res.data.column4[i].date})</li>`))
-                                }
+                                columnSet(column,3,res.data.column4,9,18)
 
                                 //栏目五内容
-                                let column5 = column.eq(4)
-                                for (let i = 0; i<res.data.column5.length; i++) {
-                                    if (i<9)
-                                        column5.append($(`<li class="list-hover">${res.data.column5[i].title}(${res.data.column5[i].date})</li>`))
-                                }
+                                columnSet(column,4,res.data.column5,9,18)
 
                                 //栏目六内容
                                 let column6 = column.eq(5)
@@ -443,6 +422,29 @@
             }
         };
     });
+
+    /**
+     * 操作1-5栏目
+     * @param $jq 父元素的jquery对象
+     * @param n 这是第几个子对象
+     * @param data 后端返回的对象
+     * @param maxList 栏目最多显示多少条
+     * @param maxLength 一条最多显示多少字
+     */
+    function columnSet($jq,n,data,maxList,maxLength) {
+        let columnX = $jq.eq(n)
+        for (let i = 0; i<data.length; i++) {
+            if (i<maxList){
+                let description = data[i].title
+                if (description.length > maxLength) {
+                    description = description.slice(0,maxLength-2) + "……"
+                }
+                columnX.append($(`<li class="list-hover">${description}(${data[i].date})</li>`))
+            }
+
+        }
+    }
+
 
     /**
      * 计算两个日期的相差天数
