@@ -50,6 +50,30 @@
         .safe-manage td{
             padding: 5px 30px;
         }
+        .links-manage{
+            text-align: center;
+        }
+        .links-manage table{
+            margin: auto;
+        }
+        .links-manage td {
+            padding: 5px 20px;
+        }
+        .column-title-manage{
+            text-align: center;
+        }
+        .column6-manage{
+            text-align: center;
+        }
+        .admin-manage{
+            text-align: center;
+        }
+        table{
+            margin: auto;
+        }
+        td{
+            padding: 5px 20px;
+        }
     </style>
 </head>
 <body>
@@ -150,24 +174,125 @@
     </div>
     <h3>友情链接管理</h3>
     <div class="links-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>显示文字</th>
+                <th>跳转链接</th>
+            </tr>
+            <tbody>
 
+            </tbody>
+        </table>
+        <button>确认更改</button>
     </div>
     <h3>栏目标题管理</h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <div class="column-title-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>显示文字</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button>确认更改</button>
+    </div>
     <h3>栏目1内容管理<span class="column-title"></span></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
-    <h3>栏目2内容管理<span class="column-title"></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
-    <h3>栏目3内容管理<span class="column-title"></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
-    <h3>栏目4内容管理<span class="column-title"></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
-    <h3>栏目5内容管理<span class="column-title"></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
-    <h3>栏目6内容管理<span class="column-title"></h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <div class="column1-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>时间</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>栏目2内容管理<span class="column-title"></span></h3>
+    <div class="column2-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>时间</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>栏目3内容管理<span class="column-title"></span></h3>
+    <div class="column3-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>时间</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>栏目4内容管理<span class="column-title"></span></h3>
+    <div class="column4-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>时间</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>栏目5内容管理<span class="column-title"></span></h3>
+    <div class="column5-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>标题</th>
+                <th>时间</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <h3>栏目6内容管理<span class="column-title"></span></h3>
+    <div class="column6-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>图片</th>
+                <th>操作</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+        <br>
+        <span style="color: #aeaeae;">* 推荐603*450像素的图片</span><br><br>
+        <button>确认更换</button>
+    </div>
     <h3>管理员管理</h3>
-    <div>Nam dui erat, auctor a, dignissim quis.</div>
+    <div class="admin-manage">
+        <table>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 </div>
 </body>
 <script src="external/jquery/jquery.js"></script>
@@ -182,7 +307,6 @@
                 let data = res.data
                 // 改变nav
                 let navs = $(".nav-manage input")
-                console.log(navs)
                 for (let i = 0; i<navs.size()/2; i++) {
                     navs.eq(2*i).val(data.navs[i].description)
                     navs.eq(2*i+1).val(data.navs[i].src)
@@ -205,57 +329,114 @@
                 let safeOrigin = data.safe[1].dates
                 $('#origin').val(safeOrigin)
 
+                // 显示友情链接
+                for (let i = 0; i < data.link.length; i++) {
+                    let $newHtml = $(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type='text' value='${data.link[i].description}'> </td>
+                                        <td><input type='text' value='${data.link[i].src}'></td>
+                                    </tr>`)
+                    $(".links-manage tbody").eq(0).append($newHtml)
+                }
+
+                // 显示栏目标题
+                for (let i = 0; i < data.columnTitle.length; i++) {
+                    let $newHtml = $(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type='text' value='${data.columnTitle[i].description}'> </td>
+                                    </tr>`)
+                    $(".column-title-manage tbody").eq(0).append($newHtml)
+                }
+
                 // 显示标题
                 for (let i = 0; i < data.columnTitle.length; i++) {
                     $(".column-title").eq(i).html("----" + data.columnTitle[i].description)
                 }
 
-                // $("#safe-local").html(countDaysBetween(safeLocal, new Date()))
-                // $("#safe-origin").html(countDaysBetween(safeOrigin, new Date()))
-                //
-                // // 操作友情链接
-                // for (let i=0; i<res.data.link.length; i++) {
-                //     $("#links").append($(`<span class="list-hover" onclick="window.open('${res.data.link[i].src}');" style="margin: 2px 5px">${res.data.link[i].description}</span> `))
-                // }
-                // // 栏目标题
-                // let columnTitle = $(".column-title")
-                // for (let i = 0; i<res.data.columnTitle.length; i++) {
-                //     columnTitle.eq(i).html(res.data.columnTitle[i].description)
-                // }
-                // // 总栏目都放到class里
-                // let column = $(".column")
-                //
-                // // 栏目1内容
-                // columnSet(column,0,res.data.column1,9,35)
-                //
-                // //栏目二内容
-                // columnSet(column,1,res.data.column2,9,35)
-                //
-                // //栏目三内容
-                // columnSet(column,2,res.data.column3,9,18)
-                //
-                // //栏目四内容
-                // columnSet(column,3,res.data.column4,9,18)
-                //
-                // //栏目五内容
-                // columnSet(column,4,res.data.column5,9,18)
-                //
-                // //栏目六内容
-                // let column6 = column.eq(5)
-                // for (let i = 0; i<res.data.column6.length; i++) {
-                //     let newHtml = $(`<div class="swiper-slide">
-           		// 		                                <a href="#">
-           		// 			                                <img src="${res.data.column6[i].img_src}">
-           		// 		                                </a>
-           		// 		                                <div class="layer-mask"></div>
-           		// 	                                   </div>`)
-                //     column6.append(newHtml)
-                // }
+                // 栏目1显示
+                let column1 = $(".column1-manage tbody").eq(0)
+                for (let i = 0; i < data.column1.length; i++) {
+                    column1.append($(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type="text" value="${data.column1[i].title}"></td>
+                                        <td><input type="text" value="${data.column1[i].date}" </td>
+                                    </tr>`))
+                }
+
+                // 栏目2显示
+                let column2 = $(".column2-manage tbody").eq(0)
+                for (let i = 0; i < data.column2.length; i++) {
+                    column2.append($(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type="text" value="${data.column2[i].title}"></td>
+                                        <td><input type="text" value="${data.column2[i].date}" </td>
+                                    </tr>`))
+                }
+
+                // 栏目3显示
+                let column3 = $(".column3-manage tbody").eq(0)
+                for (let i = 0; i < data.column3.length; i++) {
+                    column3.append($(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type="text" value="${data.column3[i].title}"></td>
+                                        <td><input type="text" value="${data.column3[i].date}" </td>
+                                    </tr>`))
+                }
+
+                // 栏目4显示
+                let column4 = $(".column4-manage tbody").eq(0)
+                for (let i = 0; i < data.column4.length; i++) {
+                    column4.append($(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type="text" value="${data.column4[i].title}"></td>
+                                        <td><input type="text" value="${data.column4[i].date}" </td>
+                                    </tr>`))
+                }
+
+                // 栏目5显示
+                let column5 = $(".column5-manage tbody").eq(0)
+                for (let i = 0; i < data.column5.length; i++) {
+                    column5.append($(`<tr>
+                                        <td>${i + 1}</td>
+                                        <td><input type="text" value="${data.column5[i].title}"></td>
+                                        <td><input type="text" value="${data.column5[i].date}" </td>
+                                    </tr>`))
+                }
+                // 栏目六显示
+                let column6 = $(".column6-manage tbody").eq(0)
+                for (let i =0; i<data.column6.length; i++) {
+                    let $newMiddle = $(`<tr>
+                                             <td>${i+1}</td>
+                                             <td><img src="../${data.column6[i].img_src}" height='100px'></td>
+                                             <td><button>删除</button></td>
+                                         </tr>`)
+                    column6.append($newMiddle)
+                }
             }
             $("button").button()
         },
         error: function (err) {
             console.log('出错了'+err)
+        }
+    })
+
+    //admin 请求
+    $.ajax({
+        url: 'php/adminList.php',
+        methods: 'get',
+        success: function (res) {
+            res = JSON.parse(res)
+            if (res.code === 0) {
+                for (let i = 0; i< res.data.adminList.length; i++) {
+                    $('.admin-manage tbody').eq(0).append($(`<tr><td>${i + 1}</td><td>${res.data.adminList[i].admin_name}</td><td><button>删除</button></td></tr>`))
+                }
+            $('button').button();
+            } else {
+                alert('返回出错');
+            }
+        },
+        error: function (err) {
+            alert('请求出错');
         }
     })
     $(".date").datepicker({
